@@ -1,0 +1,121 @@
+commands.akashic_goggles.copy.click=点击复制到剪贴板
+commands.akashic_goggles.invalidItem=手持物品不是阿卡夏护目镜
+commands.akashic_goggles.usage=用法：/akashic_goggles <子命令>
+
+commands.akashic_goggles.lock.noChange=阿卡夏护目镜已经处于锁定状态
+commands.akashic_goggles.lock.success=已锁定阿卡夏护目镜
+commands.akashic_goggles.lock.usage=用法：/akashic_goggles lock [玩家] [槽位]
+commands.akashic_goggles.nbt.success=已序列化阿卡夏护目镜：%s
+commands.akashic_goggles.nbt.usage=用法：/akashic_goggles nbt [玩家]
+commands.akashic_goggles.pop.all=所有物品
+commands.akashic_goggles.pop.multiple=顶部多个物品
+commands.akashic_goggles.pop.none=阿卡夏护目镜中无可弹出物品
+commands.akashic_goggles.pop.single=顶部单个物品
+commands.akashic_goggles.pop.success=已从阿卡夏护目镜中弹出%s
+commands.akashic_goggles.pop.usage=用法：/akashic_goggles pop [玩家] [destroy|give]
+commands.akashic_goggles.push.all=物品栏中所有可适用物品
+commands.akashic_goggles.push.invalidItem=副手手持物品无法装入阿卡夏护目镜
+commands.akashic_goggles.push.invalidItemInventory=物品栏中无可装入阿卡夏护目镜的物品
+commands.akashic_goggles.push.invalidItemProvided=指定物品无法装入阿卡夏护目镜
+commands.akashic_goggles.push.single=物品
+commands.akashic_goggles.push.success=已将%s装入阿卡夏护目镜
+commands.akashic_goggles.push.tagError=数据标签解析失败：%s
+commands.akashic_goggles.push.usage=用法：/akashic_goggles push [玩家] [<物品> [数据] [数据标签]] 或 /akashic_goggles push [玩家] [consume|keep] [all]
+commands.akashic_goggles.unlock.noChange=阿卡夏护目镜已经处于解锁状态
+commands.akashic_goggles.unlock.success=已解锁阿卡夏护目镜
+commands.akashic_goggles.unlock.usage=用法：/akashic_goggles unlock [玩家]
+
+item.akashic_goggles:goggles.name=阿卡夏护目镜
+item.akashic_goggles:goggles.locked.name=阿卡夏护目镜（已锁定）
+item.akashic_goggles:goggles.tooltip=究极的护目镜！可同时佩戴多款信息显示护目镜%s。
+item.akashic_goggles:goggles.tooltip.all=，右键点击装入或在工作台中与该物品合成即可
+item.akashic_goggles:goggles.tooltip.dropInOnly=，直接右键点击装入即可
+item.akashic_goggles:goggles.tooltip.none=
+item.akashic_goggles:goggles.tooltip.locked=
+item.akashic_goggles:goggles.tooltip.recipeOnly=，在工作台中与该物品合成即可
+item.akashic_goggles:goggles.tooltip_applicable=该物品可装入阿卡夏护目镜。
+itemGroup.akashic_goggles.tab=阿卡夏护目镜
+
+mod.akashic_goggles.credits=\n- jbredwards：作者与维护者\n- CleanroomMC：制作了TemplateDevEnv\n- ZHAY10086：添加了简体中文语言支持
+mod.akashic_goggles.description=添加了究极的护目镜，允许你可同时佩戴多款信息显示护目镜。
+
+subtitles.akashic_goggles.item.empty=阿卡夏护目镜：倒空
+subtitles.akashic_goggles.item.equip=阿卡夏护目镜：沙沙作响
+subtitles.akashic_goggles.item.insert=阿卡夏护目镜：填充
+
+# ------
+# Config
+# ------
+
+akashic_goggles/akashic_goggles=阿卡夏护目镜物品
+akashic_goggles/akashic_goggles.tooltip=阿卡夏护目镜物品的配置项。
+config.akashic_goggles.modCompat=模组兼容
+config.akashic_goggles.modCompat.tooltip=阿卡夏护目镜内置模组兼容的配置项。
+
+config.akashic_goggles.addApplicableTooltip=显示可装入提示
+config.akashic_goggles.addApplicableTooltip.tooltip=为可装入阿卡夏护目镜的信息显示护目镜添加提示文本。
+config.akashic_goggles.allowDropIn=允许右键直接装入
+config.akashic_goggles.allowDropIn.tooltip=兼容的信息显示护目镜可通过右键点击直接装入阿卡夏护目镜。
+config.akashic_goggles.allowRecipe=允许合成装入
+config.akashic_goggles.allowRecipe.tooltip=兼容的信息显示护目镜可在工作台中与阿卡夏护目镜合成来装入。
+config.akashic_goggles.armorAttributes=应用嵌套盔甲属性
+config.akashic_goggles.armorAttributes.tooltip=佩戴装有带盔甲属性物品的阿卡夏护目镜时，为佩戴者应用对应属性。
+config.akashic_goggles.baubleType=饰品类型
+config.akashic_goggles.baubleType.tooltip=阿卡夏护目镜的饰品类型。
+config.akashic_goggles.blacklist=黑名单
+config.akashic_goggles.blacklist.tooltip=禁止装入阿卡夏护目镜的物品黑名单。
+config.akashic_goggles.height=提示框GUI高度
+config.akashic_goggles.height.tooltip=阿卡夏护目镜GUI提示框中显示的最小槽位行数。
+config.akashic_goggles.width=提示框GUI宽度
+config.akashic_goggles.width.tooltip=阿卡夏护目镜GUI提示框中显示的槽位列数。
+
+akashic_goggles/compat/actuallyadditions=实用拓展（Actually Additions）
+akashic_goggles/compat/actuallyadditions.tooltip=阿卡夏护目镜对实用拓展的兼容设置。
+config.akashic_goggles.compat.actuallyadditions.baubleType=饰品类型
+config.akashic_goggles.compat.actuallyadditions.baubleType.tooltip=工程师护目镜的饰品类型。
+
+akashic_goggles/compat/bibliocraft=收藏馆（BiblioCraft）
+akashic_goggles/compat/bibliocraft.tooltip=阿卡夏护目镜对收藏馆的兼容设置。
+config.akashic_goggles.compat.bibliocraft.baubleType=饰品类型
+config.akashic_goggles.compat.bibliocraft.baubleType.tooltip=老花镜的饰品类型。
+
+akashic_goggles/compat/embers=余烬（Embers）
+akashic_goggles/compat/embers.tooltip=阿卡夏护目镜对余烬的兼容设置。
+config.akashic_goggles.compat.embers.baubleType=饰品类型
+config.akashic_goggles.compat.embers.baubleType.tooltip=灰烬护目镜的饰品类型。
+
+akashic_goggles/compat/erebus=混沌之地（Erebus）
+akashic_goggles/compat/erebus.tooltip=阿卡夏护目镜对混沌之地的兼容设置。
+config.akashic_goggles.compat.erebus.baubleType=饰品类型
+config.akashic_goggles.compat.erebus.baubleType.tooltip=复眼护目镜的饰品类型。
+
+akashic_goggles/compat/evilcraft=邪恶工艺（EvilCraft）
+akashic_goggles/compat/evilcraft.tooltip=阿卡夏护目镜对邪恶工艺的兼容设置。
+config.akashic_goggles.compat.evilcraft.baubleType=饰品类型
+config.akashic_goggles.compat.evilcraft.baubleType.tooltip=幽冥眼镜的饰品类型。
+
+akashic_goggles/compat/galacticraft=星系（Galacticraft）
+akashic_goggles/compat/galacticraft.tooltip=阿卡夏护目镜对星系的兼容设置。
+config.akashic_goggles.compat.galacticraft.baubleType=饰品类型
+config.akashic_goggles.compat.galacticraft.baubleType.tooltip=探测目镜的饰品类型。
+config.akashic_goggles.compat.galacticraft.renderOverlayTexture=渲染叠加层纹理（探测目镜）
+config.akashic_goggles.compat.galacticraft.renderOverlayTexture.tooltip=允许玩家关闭探测目镜的叠加层纹理，避免影响使用。
+config.akashic_goggles.compat.galacticraft.renderValuablesTexture=渲染矿物纹理（探测目镜）
+config.akashic_goggles.compat.galacticraft.renderValuablesTexture.tooltip=探测目镜的新功能，渲染矿物纹理而非无纹理方块。
+
+akashic_goggles/compat/openblocks=开放式方块（OpenBlocks）
+akashic_goggles/compat/openblocks.tooltip=阿卡夏护目镜对开放式方块的兼容设置。
+config.akashic_goggles.compat.openblocks.baubleType=饰品类型
+config.akashic_goggles.compat.openblocks.baubleType.tooltip=开放式方块眼镜的饰品类型。
+config.akashic_goggles.compat.openblocks.stackCrayonGlasses=堆叠蜡笔眼镜
+config.akashic_goggles.compat.openblocks.stackCrayonGlasses.tooltip=允许不同颜色的蜡笔眼镜同时存入阿卡夏护目镜。
+
+akashic_goggles/compat/railcraft=铁路（Railcraft）
+akashic_goggles/compat/railcraft.tooltip=阿卡夏护目镜对铁路的兼容设置。
+config.akashic_goggles.compat.railcraft.baubleType=饰品类型
+config.akashic_goggles.compat.railcraft.baubleType.tooltip=铁路工护目镜的饰品类型。
+
+akashic_goggles/compat/simplyjetpacks=简易喷气背包（Simply Jetpacks）
+akashic_goggles/compat/simplyjetpacks.tooltip=阿卡夏护目镜对简易喷气背包的兼容设置。
+config.akashic_goggles.compat.simplyjetpacks.baubleType=饰品类型
+config.akashic_goggles.compat.simplyjetpacks.baubleType.tooltip=飞行员护目镜的兼容设置。
