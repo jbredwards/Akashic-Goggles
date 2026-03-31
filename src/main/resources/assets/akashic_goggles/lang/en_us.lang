@@ -36,7 +36,7 @@ item.akashic_goggles:goggles.tooltip.recipeOnly=, by combining them with this in
 item.akashic_goggles:goggles.tooltip_applicable=This item may be applied to Akashic Goggles.
 itemGroup.akashic_goggles.tab=Akashic Goggles
 
-mod.akashic_goggles.credits=\n- jbredwards: creator and maintainer\n- CleanroomMC: created TemplateDevEnv
+mod.akashic_goggles.credits=\n- jbredwards: creator and maintainer\n- CleanroomMC: created TemplateDevEnv\n- ZHAY10086: added Simplified Chinese language support
 mod.akashic_goggles.description=Adds the Goggles of Goggles, allowing you to wear many different pieces of world-revealing eyewear at once!
 
 subtitles.akashic_goggles.item.empty=Akashic Goggles empties
