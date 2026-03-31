@@ -28,6 +28,7 @@ import git.jbredwards.akashic_goggles.mod.common.AkashicGogglesConfig;
 import git.jbredwards.akashic_goggles.mod.common.InventoryAkashicGoggles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -38,12 +39,15 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import vazkii.arl.util.TooltipHandler;
+import vazkii.botania.common.core.helper.PlayerHelper;
+import vazkii.botania.common.item.equipment.bauble.ItemBauble;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -160,6 +164,15 @@ public enum CompatHandler
                 GlStateManager.color(1, 1, 1, 1);
                 stack.getItem().renderHelmetOverlay(stack, mc.player, event.getResolution(), event.getPartialTicks());
             });
+        }
+    }
+
+    @net.minecraftforge.fml.common.Optional.Method(modid = "botania")
+    @SubscribeEvent
+    static void updateBotaniaBaubleAdvancement(@Nonnull final LivingEquipmentChangeEvent event) {
+        if(event.getSlot().getSlotType() == EntityEquipmentSlot.Type.ARMOR && event.getEntity() instanceof EntityPlayerMP
+        && AkashicGogglesUtil.getContainedStacks(event.getTo()).anyMatch(stack -> stack.getItem() instanceof ItemBauble)) {
+            PlayerHelper.grantCriterion((EntityPlayerMP)event.getEntity(), new ResourceLocation("botania", "main/bauble_wear"), "code_triggered");
         }
     }
 
