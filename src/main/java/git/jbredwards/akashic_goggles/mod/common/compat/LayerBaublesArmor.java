@@ -25,6 +25,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
@@ -52,10 +53,13 @@ public class LayerBaublesArmor extends LayerBipedArmor
         // A hack to render any armor item, regardless of what the entity actually has equipped.
         @Nullable final IItemHandler inventory = entity.getCapability(BaublesCapabilities.CAPABILITY_BAUBLES, null);
         if(inventory != null) IntStream.range(0, inventory.getSlots()).mapToObj(inventory::getStackInSlot).filter(CompatHandler::test).findFirst().ifPresent(stack -> {
-            @Nonnull final ItemStack previous = ((EntityPlayer)entity).inventory.armorInventory.set(EntityEquipmentSlot.HEAD.getIndex(), stack);
+            @Nonnull final NonNullList<ItemStack> armor = ((EntityPlayer)entity).inventory.armorInventory;
+            @Nonnull final ItemStack[] previous = armor.toArray(new ItemStack[0]);
 
+            armor.clear();
+            armor.set(EntityEquipmentSlot.HEAD.getIndex(), stack);
             try { super.doRenderLayer(entity, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, scale); }
-            finally { ((EntityPlayer)entity).inventory.armorInventory.set(EntityEquipmentSlot.HEAD.getIndex(), previous); }
+            finally { for(int i = previous.length - 1; i > -1; i--) armor.set(i, previous[i]); }
         });
     }
 }

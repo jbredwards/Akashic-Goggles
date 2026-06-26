@@ -92,7 +92,7 @@ public enum CompatHandler
     }
 
     @SideOnly(Side.CLIENT)
-    public static void postInitClient() {
+    public static void loadCompleteClient() {
         if(AkashicGoggles.HAS_BAUBLES && !LOADED_HANDLERS.isEmpty()) Minecraft.getMinecraft().getRenderManager().getSkinMap().forEach((skin, render) -> render.addLayer(new LayerBaublesArmor(render)));
     }
 

@@ -46,7 +46,7 @@ import net.minecraftforge.client.resource.VanillaResourceType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -89,8 +89,8 @@ public final class AkashicGoggles
 
     @Mod.EventHandler
     @SideOnly(Side.CLIENT)
-    static void postInitClient(@Nonnull final FMLPostInitializationEvent event) {
-        CompatHandler.postInitClient();
+    static void loadCompleteClient(@Nonnull final FMLLoadCompleteEvent event) {
+        CompatHandler.loadCompleteClient();
         createMetadataTranslated(Objects.requireNonNull(Loader.instance().activeModContainer()));
     }
 
